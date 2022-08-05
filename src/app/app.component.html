@@ -1,0 +1,32 @@
+<div class="main">
+<div class="main-container slideUp">
+	<div class="header">
+		<h1 >Курс валют сьогодні:</h1>
+		<ul>
+			<li>Dollar : {{header1}} UAH</li>
+			<li>Euro : {{header2}} UAH</li>
+		</ul>
+	</div>
+	<div class="selection-cont">
+		<input #i1 type="number" (blur)="changeNumOn(i1.value)">
+		<select #c1 name="" id="country1" (mouseleave)="changebase(c1.value)">
+			<option value="USD">US Dollar</option>
+			<option value="EUR">Euro</option>
+			<option value="UAH">UA Гривня</option>
+		</select>
+		<p>to</p>
+		
+		<select #c2 name="" id="country2" (mouseleave)="tocountry(c2.value)">
+			<option value="USD">US Dollar</option>
+			<option value="EUR">Euro</option>
+			<option value="UAH">UA Гривня</option>
+		</select>
+	</div>
+	<button (click)="convert(c1.value, c2.value, i1.value)">convert</button>
+	<div class="result-container">
+		<p>{{inpOne}} {{base}}</p>
+		<p> = </p>
+		<p> {{result}} {{cont2}}</p>
+	</div>
+</div>
+</div>
