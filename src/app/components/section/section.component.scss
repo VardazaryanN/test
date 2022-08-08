@@ -1,0 +1,60 @@
+
+.selection-cont {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+.selection-cont p {
+	font-size: 30px;
+	display: inline-block;
+	margin-left: 5px;
+	font-family: "Abril Fatface", cursive;
+}
+
+select {
+	font-size: 17px;
+	padding: 5px !important;
+	border-radius: 10px;
+	border: none;
+	height: 30px;
+	font-weight: 700;
+}
+
+input {
+	width: 60px;
+	margin: 0 5px;
+	font-size: 17px;
+	padding: 5px !important;
+	border-radius: 10px;
+	border: none;
+	height: 20px;
+	font-weight: 700;
+}
+
+select:focus {
+	outline: none;
+}
+
+option {
+	font-weight: 700;
+	color: rgb(225, 214, 4);
+}
+button {
+	background-color: rgb(29 96 53);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 25px;
+	cursor: pointer;
+	padding: 5px 10px;
+	margin: 10px auto;
+	display: block;
+	width: 60%;
+}
+
+button:hover {
+	background-color: hwb(53 10% 18%);
+	color: rgb(53, 53, 53);
+}

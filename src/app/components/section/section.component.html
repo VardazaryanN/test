@@ -1,0 +1,17 @@
+<div class="selection-cont">
+	<input #i1 type="number">
+	<select #c1 name="" id="country1">
+		<option value="USD">US Dollar</option>
+		<option value="EUR">Euro</option>
+		<option value="UAH">UA Гривня</option>
+	</select>
+	<p>to</p>
+
+	<select #c2 name="" id="country2">
+		<option value="USD">US Dollar</option>
+		<option value="EUR">Euro</option>
+		<option value="UAH">UA Гривня</option>
+	</select>
+</div>
+
+<button (click)="convert(c1.value, c2.value, i1.value)">convert</button>
