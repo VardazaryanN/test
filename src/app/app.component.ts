@@ -10,8 +10,11 @@ import { HostListener } from '@angular/core';
 
 export class AppComponent {
   title = 'myCalculator';
-  
- 	
-  constructor(private currency: CurrencyapidataService){}
+  dataObj: any = {};
 
+  constructor( currency: CurrencyapidataService){}
+	passObj(variablesString: string) {
+    this.dataObj = JSON.parse(variablesString)
+	console.log(this.dataObj)
+  }
 }

@@ -1,5 +1,6 @@
-export interface Country {
-  base: 'USD';
-  cont2: 'USD';
-  inpOne: 1
+export interface DataObj {
+  base: '';
+  cont2: '';
+  inpOne: any;
+  result: string
 }

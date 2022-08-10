@@ -1,8 +1,9 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CurrencyapidataService } from '../../currencyapidata.service';
 import { HostListener } from '@angular/core';
+import { DataObj } from '../../models'
 @Component({
 	selector: 'app-result',
 	templateUrl: 'result.component.html',
@@ -10,13 +11,8 @@ import { HostListener } from '@angular/core';
 })
 
 export class ResultComponent implements OnInit {
-	currjson: any = [];
-	result: any = '';
-	base = 'USD';
-	cont2 = 'USD';
-	
-	inpOne = 1;
- 
+	@Input() dataObj:DataObj;
+
 	constructor(private currency: CurrencyapidataService){}
 	ngOnInit(): void {
 		console.log(1)
