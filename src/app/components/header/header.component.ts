@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CurrencyapidataService } from '../../currencyapidata.service';
-import { HostListener } from '@angular/core';
+
 @Component({
 	selector: 'app-header',
 	templateUrl: 'header.component.html',
@@ -8,33 +8,31 @@ import { HostListener } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
+
+
+	USD:any = '';
+	EUR:any = '';
+	
 	currjsonForUSD: any = [];
     currjsonForEUR: any = [];
-	isUSD = 'USD';
-	isEUR = 'EUR';
-	header1 = 'USD';
-	header2 = 'USD';
+
 	@HostListener('window:load')
 	onLoad() {
-	 this.currency.getcurrencydata(this.isUSD).subscribe(data =>{
+	 this.currency.getcurrencydata('USD').subscribe(data =>{
 			
 			 this.currjsonForUSD = JSON.stringify(data)
 			 this.currjsonForUSD = JSON.parse(this.currjsonForUSD)
-			 this.header1 = this.currjsonForUSD.rates.UAH		 
+			 this.USD =  Math.round( this.currjsonForUSD.rates.UAH * 1000) / 1000		 
 		})
 
-	 this.currency.getcurrencydata(this.isEUR).subscribe(data =>{
+	 this.currency.getcurrencydata('EUR').subscribe(data =>{
 			
 			 this.currjsonForEUR = JSON.stringify(data)
 			 this.currjsonForEUR = JSON.parse(this.currjsonForEUR)
-			 this.header2 = this.currjsonForEUR.rates.UAH
+			 this.EUR = Math.round( this.currjsonForEUR.rates.UAH * 1000) / 1000
 			 		 
 		})
-	
-	
  	}
 	constructor(private currency: CurrencyapidataService){}
-	ngOnInit(): void {
-		console.log(1)
-	}
+	ngOnInit(): void {console.log(1)}
 }

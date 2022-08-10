@@ -1,8 +1,7 @@
 
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { CurrencyapidataService } from '../../currencyapidata.service';
-import { HostListener } from '@angular/core';
 import { DataObj } from '../../models'
 @Component({
 	selector: 'app-result',
